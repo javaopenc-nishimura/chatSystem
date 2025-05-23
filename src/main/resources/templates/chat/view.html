@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1 th:text="${title}"></h1>
+		<form method="get" action="#" th:action="@{/view1}">
+		<p>お名前：<input type="text" name="name1" /></p>
+		<p>コメント：<input type="text" name="comment" /></p>
+		<input type="submit" value="投稿" />
+		</form>
+		
+		<table>
+		<tr th:each="res : ${dbList}">
+		<td th:text="${res.name}">お名前</td>
+		<td th:text="${res.comment}">コメント</td>
+		</tr>
+		</table>
+	</body>
 </html>
