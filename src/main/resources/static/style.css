@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+p{
+	padding-bottom: 10px;
+	border-bottom-style: solid;
+	border-color: gainsboro;
+}
+
+input[name="comment"]{
+	width: 50%;
+}
+
+#name{
+	font-size: 10px;
+	color:#808080;
+	text-align: left;
+	vertical-align: top;
+}
+
+#comment{
+	font-size: 10px;
+	color: black;
+	background: gainsboro;
+	border: 2px solid #c0c0c0;
+	border-radius: 0px 15px 15px 15px;
+	margin-top: 20px;
+	text-align: left;
+	vertical-align: bottom;
+}
+

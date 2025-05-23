@@ -2,21 +2,20 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" th:href="@{/style.css}">
 	</head>
 	<body>
 		<h1 th:text="${title}"></h1>
 		<form method="get" action="#" th:action="@{/view}" th:object="${form}">
-		<p>お名前：<input type="text" name="name1" th:value="*{name1}" /></p>
-		<p>コメント：<input type="text" name="comment" th:value="*{comment}" /></p>
+		<p><input type="text" name="name1" th:value="*{name1}" placeholder="お名前:" /> : <input type="text" name="comment" th:value="*{comment}" placeholder="コメント:500文字まで。Enterキーでも投稿できます。" /> <input type="submit" value="投稿" /></p>
 		<div th:if="${#fields.hasErrors('name1')}" th:errors="*{name1}">エラー</div>
 		<div th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}">エラー</div>
-		<input type="submit" value="投稿" />
 		</form>
 		
 		<table>
 		<tr th:each="res : ${dbList}">
-		<td th:text="${res.name}">お名前</td>
-		<td th:text="${res.comment}">コメント</td>
+		<td th:text="${res.name}" id="name">お名前</td>
+		<td th:text="${res.comment}" id="comment">コメント</td>
 		</tr>
 		</table>
 	</body>
